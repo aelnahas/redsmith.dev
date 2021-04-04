@@ -1,0 +1,36 @@
+baseURL = "https://redsmith.dev"
+languageCode = "en-us"
+title = "Redsmith Blogs"
+theme="ananke"
+
+
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 10
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  favicon = ""
+  site_logo = ""
+  description = "Show me the blogs"
+  facebook = ""
+  twitter = ""
+  instagram = ""
+  youtube = ""
+  github = "https://github.com/aelnahas"
+  gitlab = ""
+  linkedin = "https://www.linkedin.com/in/ahmed-elnahas-903b4243/"
+  mastodon = ""
+  slack = ""
+  stackoverflow = ""
+  rss = ""
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+#   background_color_class = "bg-black"
+  featured_image = "/img/hero.jpg"
+  recent_posts_number = 3
