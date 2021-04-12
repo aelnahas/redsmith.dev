@@ -1,7 +1,7 @@
 ---
 title: "Readings"
 date: 2021-04-11T21:43:20-04:00
-draft: true
+draft: false
 ---
 
 These are my personal notes for books, articles, and papers that I have been reading. Why am I doing this ?
