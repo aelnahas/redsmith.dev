@@ -10,36 +10,34 @@ tags:
 ---
 ## Introduction 
 
-These are my notes from [Microservice Patterns](https://www.amazon.ca/Microservices-Patterns-examples-Chris-Richardson/dp/1617294543/ref=sr_1_1?dchild=1&keywords=microservice+patterns&qid=1620607913&sr=8-1) by `Chris Richardson`, on Chapter 1.
+These are my notes from Chapter 1 on [Microservice Patterns](https://www.amazon.ca/Microservices-Patterns-examples-Chris-Richardson/dp/1617294543/ref=sr_1_1?dchild=1&keywords=microservice+patterns&qid=1620607913&sr=8-1) by `Chris Richardson`
 
 
 ## Chapter Summary 
-- Monolithic architecture pattern produces code as a single deployment unit. Wheras, the Microservice architecture pattern decomposes an application into a set of deployments, each with their own storage.
+- Monolithic architecture pattern results in code that is deployed as single unit. Where as, the Microservice architecture pattern decomposes an application into a set of services, each with its own storage and deployment.
 - Monolithic architecture is simple and quick to iterate on at the beginning, making it a good choice for simple application.
 - Microservice architecture helps accelerates the velocity of software development by enabling teams to work automonously on different services.
-- In exchange for being able to better able to scale features and teams, mircroservices come with a drawback of the complexity.
+- In exchange for being able to better scale features and teams, mircroservices come with a drawback of the complexity.
 
 ## 1.1.2 : The Benefits of the monolithic architecture
-At the beginning of the startup or project monolithic architectural approach offers some benefits, some of which are:
+At the beginning of the startup or project, monolithic architecture tends to offers some benefits, some of which are:
 
-- `Easy to Develop`: Allows devs to focus on developing a single app, which more aligned with IDE's and dev tools
-- `Easy to make changes`: Because all the code is in one spot, it is easier to implement and deploy big changes.
+- `Easy to Develop`: Allows devs to focus on developing a single app, which is more aligned with IDE's and dev tools.
+- `Easy to make changes`: Because all the code is in one spot,it is easier to implement and deploy big changes.
 - `Easy to test and deploy`
-- `Easy to scale`: Single deployments means that it is easier to scale the infrastructue , by either spinning more instances, or picking a better hardware.
-
+- `Easy to scale`: Single deployments means that it is easier to scale the infrastructue ,by either spinning more instances, or picking better hardware.
 
 ## 1.1.3: Living in the monolithic hell
 
-Over time more features and changes are being implemented on the monolithic app. This makes development, deployment, scaling, and testing more difficult due to:
+Over time, more features and changes get implemented on the monolithic app. This makes development, deployment, scaling, and testing more difficult due to:
 
-- `Complexity`: As more code is added to the app, different modules in the system might become more coupled, making it harder to reason with and adapt to the changes needed. This in turn also makes it hard to test the changes.
+- `Complexity`: As more code is added to the app, different modules in the system become more coupled, making it harder to understand and adapt to the changes needed. Additionally, it becomes harder to test these changes.
 
-- `Development becomes more slow`: Larger applications take longer to build, boot and compile.
+- `Development becomes more slow`: Larger applications take longer to build, boot up and compile.
 
-- `Deployments is long and audous`: Similarly larger apps take more time to deploy, there is also more impact for errors due to it being a single source of fault.
+- `Deployments is long and audous`: Similarly larger apps take more time to deploy. Also, there is a higher risk of a production issue since all of the code is deployed on the same service, a faulty deployment can affect the entire app. That is this is a single source of failure.
 
-- `Scaling becomes harder`: Different sub services might need different resources. For example, an Image Processing piece might need more CPU power, where as an in memory database might need more memory capabilites. Conflicting resource needs makes it harder to scale the application.
-
+- `Scaling becomes harder`: Different sub-services might need different resources.For example, an Image Processing service would  probably be more CPU intensive and can benefit from more CPU power. Where as, an in mermory cache or database makes more use of the RAM or SSD capabilites and would benefit from boosting these resources instead. You might end up with conflicting needs, thus making it harder to scale the application properly.
 
 ### 1.4.1: The Scale Cube
 
@@ -47,15 +45,15 @@ Over time more features and changes are being implemented on the monolithic app.
 
 #### X-Axis Scaling
 - Also known as horizontal scaling
-- Run multiple identical instances of an application behind a load balancer
-- Load balancer distributes the requests across N instances.
-- This aims to increase the application's availability and capacity.
+- Idea is to run multiple identical instances of an application behind a load balancer, this is why sometimes this is called scaling by `cloning`
+- A Load balancer distributes the requests across N instances.
+- This scaling aims to improve the availability and capacity.
 
 
 #### Z-Axis Scaling
 - Similar to horizontal scaling in that multiple instances are running of the same application.
-- unlike X-Axis , Z-axis scales by splitting the data into smaller partitions.
-- Each instance holds a subset of the data.
+- unlike horizantal scalling however, Z-axis scales by splitting the data into smaller partitions.
+- Each instance holds a subset/partition of the data.
 - Data can be partition by using identifying attribute of the data ( e.g. primary key)
 - This scales the app by increasing its data volume
 - the outcome is better availability and capacity
@@ -63,17 +61,14 @@ Over time more features and changes are being implemented on the monolithic app.
 
 #### Y-Axis Scaling
 - Scaling by functionally decomposing an app into services
-- while X and Z scaling address capacity and availability, Y addresses scaling deployments, and development complexity
+- while X and Z scaling address capacity and availability, Y addresses deployments, and development complexity
 - This scaling breaks down a monolthic app into a set of services, each implements a focused functionality.
-
-My thoughts: where does vertical scaling ( aka scaling the hardware ) sit with this cube.
-
 
 ### 1.4.2 : Microservices as a form of modularity
 
 The main idea described in this section, is to decompose applications into modules that are developed and understood by different people.
 
-Microservices architecture uses services as a unit of modularity. The service's API forms its boundary that is difficult to violate. Because of the strongly enforced boundaries, microservices can help loosen the coupling between different services. 
+Microservice architecture uses services as a unit of modularity. The service's API forms its boundary,which is difficult to violate. Because of the strongly enforced boundaries, microservices can help loosen the coupling between different services. 
 
 It's therefore crucial that each service be given its own database to avoid communication / coupling through their databases. Additionally, loosely coupling applications can allow their schema's to evolve independently without impacting other services.
 
@@ -91,10 +86,10 @@ While Service Oriented Architecture (SOA) might seem similar to the microservice
 ### 1.5.1: Benefits of microservice architecture
 
 - Enables continues deliver and deployments of large complex applications. Basically, this enables teams to autonoumsly test and deploy their applications. This takes advantage of loosely coupled applications.
-- Services are small and therefor easier to maintain
-- Services are indpendently scalable. Different services can have different needs,such as CPU or Memory. Because they have segregated infrastructure, it is easier to tailor its scaling needs.
+- Services are small and are easier to maintain
+- Services are indpendently scalable.This can help with better tailoring hwo to 
 - It has better fault isolations.
-- It allows different services to adopt newer or more suitable technologies.
+- It allows different services to user newer and more suitable technologies.
 
 ### 1.5.2: Drawbacks of the mircoservice architecture
 
@@ -102,7 +97,7 @@ Microservice architecture isnt without its drawbacks, and they are summarised as
 
 - Its often difficult to define the right set of services. Decomposing services incorreclty, can lead you into a distributed monolith, as system of coupled services that must be deployed together. This is the worst of both worlds because it is sum of drawbacks from both the monolithic and microservices architecture.
 
-- Distributed systems are complex by design. There are many aspects that need attention, such as communication, distributed transactions, monitoring, distributed tracing and more.
+- Distributed systems are complex. There are many aspects that need attention, such as communication, distributed transactions, monitoring, distributed tracing and more.
 
 - Often you can end up with features that span multiple services. The challenge is to orchestrate the development, testing and deployments among the different services.
 
