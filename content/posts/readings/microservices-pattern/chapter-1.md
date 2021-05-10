@@ -1,7 +1,7 @@
 ---
 title: "Microservice Pattern Chapter 1: Escaping the Monolithic hell"
 date: 2021-05-09T13:51:20-04:00
-draft: true
+draft: false
 categories: readings
 tags: 
  - microservices
