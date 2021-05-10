@@ -1,14 +1,19 @@
 ---
-title: "Chapter 1: Escaping the Monolithic hell"
+title: "Microservice Pattern Chapter 1: Escaping the Monolithic hell"
 date: 2021-05-09T13:51:20-04:00
 draft: true
 categories: readings
 tags: 
  - microservices
  - readings
+ - mircoservice-patterns
 ---
+## Introduction 
 
-## Summary 
+These are my notes from [Microservice Patterns](https://www.amazon.ca/Microservices-Patterns-examples-Chris-Richardson/dp/1617294543/ref=sr_1_1?dchild=1&keywords=microservice+patterns&qid=1620607913&sr=8-1) by `Chris Richardson`, on Chapter 1.
+
+
+## Chapter Summary 
 - Monolithic architecture pattern produces code as a single deployment unit. Wheras, the Microservice architecture pattern decomposes an application into a set of deployments, each with their own storage.
 - Monolithic architecture is simple and quick to iterate on at the beginning, making it a good choice for simple application.
 - Microservice architecture helps accelerates the velocity of software development by enabling teams to work automonously on different services.
