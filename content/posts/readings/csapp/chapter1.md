@@ -23,6 +23,7 @@ Those phases are as follows:
 The chapter gives a light introduction into the memory and its hierchy. It begins by definig the Register File, which is a small storage device that consists of word-sized registers. Registers are fast but are small in size. Futhermore, this inverse relation ship between a memory speed and it's size, is further illustrated via the different memory layers a computer systems can have. 
 
 They include:
+
 - L1, L2, L3 : which are caches that are on a processor chip.
 
 In terms of speed L1 is the fastest while L3 is the slowest, however, the L3 is the largest in size while L1 is the smallest. 
@@ -37,6 +38,7 @@ Below is a pyramid of the cache and memory hierchy:
 ### Operating System
 
 Next in this chapter an overview of the operating system is presented. The author starts by discussing the primary purposes of an operating system, which are: 
+
 - Protecting hardware from misuse by runaway application
 - Providing a uniform mechanisim for manipulating I/O devices.
 
