@@ -5,7 +5,7 @@ draft: false
 tags:
   - patterns
   - circuit-breaker
-  - microservice-patterns
+  - mircoservice-patterns
   - microservices
 ---
 
