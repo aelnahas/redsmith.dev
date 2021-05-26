@@ -5,8 +5,6 @@ draft: false
 tags:
   - patterns
   - circuit-breaker
-  - mircoservice-patterns
-  - microservices
 ---
 
 I recently read [Microservices Pattern](https://www.amazon.ca/Microservices-Patterns-Examples-Java/dp/B07ZFZ4SJM/ref=sr_1_1?dchild=1&keywords=microservice+patterns&qid=1621115846&sr=8-1) by Chris Richardson. The book highlights the different aspects of designing a microservice architecture. Some of the topics discussed include service decomposition, service communication, handling transactions, and CQRS ( Command Query Responsibility Segregation).
